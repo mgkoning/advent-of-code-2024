@@ -9,3 +9,12 @@ My [Gleam](https://gleam.run) solutions can be found in `advent_gleam`. See the 
 Inputs should be put into the directory "input" in the root of the repository, using
 name format "day00.txt". These files are not checked in to git as the organizers of
 the Advent of Code have specified they may not be shared in this way.
+
+<!-- AOC TILES BEGIN -->
+<h1 align="center">
+  2024 - 2 ⭐ - Gleam
+</h1>
+<a href="advent_gleam/src/day01.gleam">
+  <img src=".aoc_tiles/tiles/2024/01.png" width="161px">
+</a>
+<!-- AOC TILES END -->
