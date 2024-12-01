@@ -1,9 +1,9 @@
-# Advent of Code 2024
+# Advent of Gleam 2024
 
 Solutions for [Advent of Code 2024](https://adventofcode.com/2024) in [Gleam](https://gleam.run).
 
 ## Running
-First, go to the `advent_of_gleam` directory, then run either of:
+From the `advent_gleam` directory, run either of:
 
 ```sh
 gleam run   # Run the project
