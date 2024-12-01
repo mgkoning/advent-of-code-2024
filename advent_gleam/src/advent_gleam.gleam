@@ -3,7 +3,7 @@ import gleam/int
 import util
 
 pub fn main() {
-  run(2)
+  run(1)
 }
 
 fn run(day: Int) {

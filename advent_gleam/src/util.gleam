@@ -1,6 +1,7 @@
 import gleam/dict
 import gleam/int
 import gleam/list
+import gleam/regexp
 import gleam/result
 import gleam/string
 import simplifile
@@ -19,7 +20,8 @@ pub fn read_as_ints(values: List(String)) -> List(Int) {
 }
 
 pub fn get_or_default(dict, key, default) {
-  result.unwrap(dict.get(dict, key), default)
+  dict.get(dict, key)
+  |> result.unwrap(default)
 }
 
 pub fn lines(content) -> List(String) {
@@ -27,5 +29,8 @@ pub fn lines(content) -> List(String) {
 }
 
 pub fn words(text) {
-  string.split(text, " ")
+  let assert Ok(splitter) = regexp.from_string("\\s+")
+  text
+  |> string.trim
+  |> regexp.split(with: splitter)
 }

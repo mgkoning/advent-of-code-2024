@@ -1,4 +1,5 @@
 import gleam/dict
+import gleam/function
 import gleam/int
 import gleam/io
 import gleam/list
@@ -27,7 +28,7 @@ pub fn part2(location_lists: List(List(Int))) {
   let assert [left, right] = location_lists
   let counts =
     right
-    |> list.group(fn(x) { x })
+    |> list.group(function.identity)
     |> dict.map_values(fn(_, xs) { list.length(xs) })
   left
   |> list.map(fn(k) { k * util.get_or_default(counts, k, 0) })
