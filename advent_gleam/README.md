@@ -3,11 +3,12 @@
 Solutions for [Advent of Code 2024](https://adventofcode.com/2024) in [Gleam](https://gleam.run).
 
 ## Running
-From the `advent_gleam` directory, run either of:
+From the `advent_gleam` directory, run one of:
 
 ```sh
-gleam run   # Run the project
-gleam test  # Run the tests
+gleam run     # Run the project with the puzzle for the current day (based on system date)
+gleam run <n> # Run the project with the puzzle for day n
+gleam test    # Run the tests
 ```
 
 ## Inputs

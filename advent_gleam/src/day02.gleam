@@ -1,9 +1,11 @@
 import gleam/int
 import gleam/io
 import gleam/list
+import pretty
 import util
 
 pub fn run(input) {
+  pretty.day_banner(2, "Red-Nosed Reports")
   let reports = read_reports(input)
   io.println("Part 1: " <> int.to_string(part1(reports)))
   io.println("Part 2: " <> int.to_string(part2(reports)))

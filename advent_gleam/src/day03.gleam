@@ -3,6 +3,7 @@ import gleam/io
 import gleam/list
 import gleam/option
 import gleam/regexp
+import pretty
 import util
 
 const mul_regexp = "mul\\((\\d{1,3}),(\\d{1,3})\\)"
@@ -10,6 +11,7 @@ const mul_regexp = "mul\\((\\d{1,3}),(\\d{1,3})\\)"
 const mul_cond_regexp = mul_regexp <> "|do(n't)?\\(\\)"
 
 pub fn run(input) {
+  pretty.day_banner(3, "Mull It Over")
   io.println("Part 1: " <> int.to_string(part1(input)))
   io.println("Part 2: " <> int.to_string(part2(input)))
 }
