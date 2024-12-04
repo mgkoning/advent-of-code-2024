@@ -3,11 +3,9 @@ import gleam/function
 import gleam/int
 import gleam/io
 import gleam/list
-import pretty
 import util
 
 pub fn run(input) {
-  pretty.day_banner(1, "Historian Hysteria")
   let location_lists = read_location_lists(input)
 
   let part1 = part1(location_lists)

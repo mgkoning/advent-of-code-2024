@@ -3,11 +3,9 @@ import gleam/int
 import gleam/io
 import gleam/list
 import gleam/string
-import pretty
 import util
 
 pub fn run(input) {
-  pretty.day_banner(4, "Ceres Search")
   let grid = as_grid(input)
   io.println("Part 1: " <> int.to_string(part1(grid)))
   io.println("Part 2: " <> int.to_string(part2(grid)))
