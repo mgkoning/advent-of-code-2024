@@ -11,7 +11,7 @@ import pretty
 const runners = [
   #("Historian Hysteria", day01.run), #("Red-Nosed Reports", day02.run),
   #("Mull It Over", day03.run), #("Ceres Search", day04.run),
-  #("???", day05.run),
+  #("Print Queue", day05.run),
 ]
 
 pub fn run(for day, with input) {
