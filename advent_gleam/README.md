@@ -11,6 +11,11 @@ gleam run <n> # Run the project with the puzzle for day n
 gleam test    # Run the tests
 ```
 
+## Building to an executable
+To make an executable that can run on any machine that has erlang installed, run the `build.sh`
+script to generate an executable using escript. See the
+[documentation](https://gleam.run/writing-gleam/#sharing-your-program) for details.
+
 ## Inputs
 Inputs should be put into the directory "input" in the root of the repository, using
 name format "day00.txt". These files are not checked in to git as the organizers of
