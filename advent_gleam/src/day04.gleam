@@ -2,11 +2,10 @@ import gleam/dict
 import gleam/int
 import gleam/io
 import gleam/list
-import gleam/string
 import util
 
 pub fn run(input) {
-  let grid = as_grid(input)
+  let grid = util.as_grid(input)
   io.println("Part 1: " <> int.to_string(part1(grid)))
   io.println("Part 2: " <> int.to_string(part2(grid)))
 }
@@ -56,15 +55,4 @@ pub fn part2(grid: dict.Dict(#(Int, Int), String)) {
       |> list.any(fn(offsets) { is_match(grid, target, coord, offsets) })
     })
   })
-}
-
-pub fn as_grid(input) {
-  input
-  |> util.lines
-  |> list.index_map(fn(line, y) { #(y, line) })
-  |> list.flat_map(fn(l) {
-    string.to_graphemes(l.1)
-    |> list.index_map(fn(c, x) { #(#(x, l.0), c) })
-  })
-  |> dict.from_list()
 }

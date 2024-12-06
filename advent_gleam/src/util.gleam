@@ -34,3 +34,14 @@ pub fn words(text) {
   |> string.trim
   |> regexp.split(with: splitter)
 }
+
+pub fn as_grid(input) {
+  input
+  |> lines
+  |> list.index_map(fn(line, y) { #(y, line) })
+  |> list.flat_map(fn(l) {
+    string.to_graphemes(l.1)
+    |> list.index_map(fn(c, x) { #(#(x, l.0), c) })
+  })
+  |> dict.from_list()
+}
