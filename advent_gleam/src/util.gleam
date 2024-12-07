@@ -28,6 +28,12 @@ pub fn lines(content) -> List(String) {
   string.split(content, "\n")
 }
 
+pub fn convert_lines(content, convert: fn(String) -> a) {
+  content
+  |> lines
+  |> list.map(convert)
+}
+
 pub fn words(text) {
   let assert Ok(splitter) = regexp.from_string("\\s+")
   text
