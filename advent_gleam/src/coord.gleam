@@ -5,13 +5,13 @@ import gleam/order
 pub type Coord =
   #(Int, Int)
 
-const east = #(1, 0)
+pub const east = #(1, 0)
 
-const south = #(0, 1)
+pub const south = #(0, 1)
 
-const west = #(-1, 0)
+pub const west = #(-1, 0)
 
-const north = #(0, -1)
+pub const north = #(0, -1)
 
 pub fn compare(a: Coord, b: Coord) {
   int.compare(a.0, b.0)

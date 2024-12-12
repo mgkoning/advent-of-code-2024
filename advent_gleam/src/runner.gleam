@@ -9,6 +9,7 @@ import day08
 import day09
 import day10
 import day11
+import day12
 import gleam/int
 import gleam/list
 import gleam/result
@@ -20,7 +21,7 @@ const runners = [
   #("Print Queue", day05.run), #("Guard Gallivant", day06.run),
   #("Bridge Repair", day07.run), #("Resonant Collinearity", day08.run),
   #("Disk Fragmenter", day09.run), #("Hoof It", day10.run),
-  #("Plutonian Pebbles", day11.run),
+  #("Plutonian Pebbles", day11.run), #("Garden Groups", day12.run),
 ]
 
 pub fn run(for day, with input) {
