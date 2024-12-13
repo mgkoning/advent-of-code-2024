@@ -30,6 +30,10 @@ pub fn negate(c: Coord) {
   #(-c.0, -c.1)
 }
 
+pub fn times(c: Coord, factor: Int) {
+  #(factor * c.0, factor * c.1)
+}
+
 pub fn max(a: Coord, b: Coord) {
   case compare(a, b) {
     order.Gt -> a
