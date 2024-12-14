@@ -45,3 +45,7 @@ pub fn neighbours4(a: Coord) {
   [east, south, west, north]
   |> list.map(plus(a, _))
 }
+
+pub fn manhattan_dist(a: Coord, b: Coord) {
+  int.absolute_value(b.0 - a.0) + int.absolute_value(b.1 - a.1)
+}
