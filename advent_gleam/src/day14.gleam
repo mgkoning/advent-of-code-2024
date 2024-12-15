@@ -121,7 +121,7 @@ fn show(robots: List(Robot), grid_size: Coord) {
     list.map(robots, fn(r) { r.pos }) |> list.group(function.identity)
   list.range(0, grid_size.1)
   |> list.map(fn(y) {
-    list.range(0, grid_size.1)
+    list.range(0, grid_size.0)
     |> list.map(fn(x) {
       case dict.get(positions, #(x, y)) {
         Ok(l) -> l |> list.length() |> int.to_string()

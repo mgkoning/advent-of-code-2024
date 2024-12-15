@@ -49,3 +49,7 @@ pub fn neighbours4(a: Coord) {
 pub fn manhattan_dist(a: Coord, b: Coord) {
   int.absolute_value(b.0 - a.0) + int.absolute_value(b.1 - a.1)
 }
+
+pub fn to_string(value: Coord) {
+  "x: " <> int.to_string(value.0) <> ", y: " <> int.to_string(value.1)
+}
