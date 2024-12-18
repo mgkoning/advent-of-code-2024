@@ -13,6 +13,8 @@ pub const west = #(-1, 0)
 
 pub const north = #(0, -1)
 
+pub const origin = #(0, 0)
+
 pub fn compare(a: Coord, b: Coord) {
   int.compare(a.0, b.0)
   |> order.lazy_break_tie(fn() { int.compare(a.1, b.1) })

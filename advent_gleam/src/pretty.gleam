@@ -14,5 +14,9 @@ pub fn part1_result_str(result) {
 }
 
 pub fn part2_result_int(result) {
-  io.println("Part 2: " <> int.to_string(result))
+  part2_result_str(int.to_string(result))
+}
+
+pub fn part2_result_str(result) {
+  io.println("Part 2: " <> result)
 }
