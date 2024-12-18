@@ -11,6 +11,8 @@ import gleam/yielder
 import pretty
 import util
 
+const show_map_p1 = False
+
 const show_map_p2 = False
 
 const max_coord = 70
@@ -34,8 +36,16 @@ fn part1(max_coord: Int, fallen_bytes: List(Coord)) {
   let memory_map = build_memory_map(max_coord, fallen_bytes)
   let target = #(max_coord, max_coord)
   let start = Step(coord.origin, 0, [coord.origin])
-  let assert Ok(#(length, _)) =
+  let assert Ok(#(length, path)) =
     find_shortest(memory_map, target, [start], set.from_list([coord.origin]))
+  case show_map_p1 {
+    True -> {
+      show_map(memory_map, max_coord, [])
+      io.println("")
+      show_map(memory_map, max_coord, path)
+    }
+    False -> Nil
+  }
   length
 }
 
@@ -72,7 +82,7 @@ fn part2(max_coord: Int, fallen_bytes: List(Coord)) {
     |> yielder.drop_while(fn(state) { state.2 })
     |> yielder.first()
   case show_map_p2 {
-    True -> show_map(final_map, max_coord)
+    True -> show_map(final_map, max_coord, [])
     False -> Nil
   }
   int.to_string(which.0) <> "," <> int.to_string(which.1)
@@ -145,14 +155,17 @@ fn read_falling_bytes(input) {
   })
 }
 
-fn show_map(memory_map: Dict(Coord, Space), max_coord: Int) {
+fn show_map(memory_map: Dict(Coord, Space), max_coord: Int, path: List(Coord)) {
+  let path_set = set.from_list(path)
   list.range(0, max_coord)
   |> list.map(fn(y) {
     list.range(0, max_coord)
-    |> list.map(fn(x) {
-      case dict.get(memory_map, #(x, y)) {
-        Ok(Corrupted) -> "#"
-        _ -> "."
+    |> list.map(fn(x) { #(x, y) })
+    |> list.map(fn(c) {
+      case dict.get(memory_map, c), set.contains(path_set, c) {
+        _, True -> "O"
+        Ok(Corrupted), _ -> "#"
+        _, _ -> "."
       }
     })
     |> string.join("")
