@@ -17,6 +17,7 @@ import day16
 import day17
 import day18
 import day19
+import day20
 import gleam/int
 import gleam/list
 import gleam/result
@@ -32,7 +33,7 @@ const runners = [
   #("Claw Contraption", day13.run), #("Restroom Redoubt", day14.run),
   #("Warehouse Woes", day15.run), #("Reindeer Maze", day16.run),
   #("Chronospatial Computer", day17.run), #("RAM Run", day18.run),
-  #("Linen Layout", day19.run),
+  #("Linen Layout", day19.run), #("Race Condition", day20.run),
 ]
 
 pub fn run(for day, with input) {
