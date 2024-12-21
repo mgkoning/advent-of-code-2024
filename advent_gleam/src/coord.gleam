@@ -7,11 +7,19 @@ pub type Coord =
 
 pub const east = #(1, 0)
 
+pub const right = east
+
 pub const south = #(0, 1)
+
+pub const down = south
 
 pub const west = #(-1, 0)
 
+pub const left = west
+
 pub const north = #(0, -1)
+
+pub const up = north
 
 pub const origin = #(0, 0)
 
