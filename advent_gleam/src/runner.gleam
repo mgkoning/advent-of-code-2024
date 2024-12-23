@@ -40,7 +40,7 @@ const runners = [
   #("Chronospatial Computer", day17.run), #("RAM Run", day18.run),
   #("Linen Layout", day19.run), #("Race Condition", day20.run),
   #("Keypad Conundrum", day21.run), #("Monkey Market", day22.run),
-  #("???", day23.run), #("???", day24.run), #("???", day25.run),
+  #("LAN Party", day23.run), #("???", day24.run), #("???", day25.run),
 ]
 
 pub fn run(for day, with input) {
