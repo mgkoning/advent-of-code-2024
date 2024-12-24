@@ -51,3 +51,10 @@ pub fn as_grid(input) {
   })
   |> dict.from_list()
 }
+
+pub fn list_enumerate(from: Int, up_to: Int) {
+  case up_to <= from {
+    True -> []
+    _ -> [from, ..list_enumerate(from + 1, up_to)]
+  }
+}
