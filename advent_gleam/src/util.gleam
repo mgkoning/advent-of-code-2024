@@ -58,3 +58,7 @@ pub fn list_enumerate(from: Int, up_to: Int) {
     _ -> [from, ..list_enumerate(from + 1, up_to)]
   }
 }
+
+pub fn equals(a, b) {
+  a == b
+}

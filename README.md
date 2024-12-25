@@ -12,7 +12,7 @@ the Advent of Code have specified they may not be shared in this way.
 
 <!-- AOC TILES BEGIN -->
 <h1 align="center">
-  2024 - 48 ⭐ - Gleam
+  2024 - 50 ⭐ - Gleam
 </h1>
 <a href="advent_gleam/src/day01.gleam">
   <img src=".aoc_tiles/tiles/2024/01.png" width="161px">
@@ -85,5 +85,8 @@ the Advent of Code have specified they may not be shared in this way.
 </a>
 <a href="advent_gleam/src/day24.gleam">
   <img src=".aoc_tiles/tiles/2024/24.png" width="161px">
+</a>
+<a href="advent_gleam/src/day25.gleam">
+  <img src=".aoc_tiles/tiles/2024/25.png" width="161px">
 </a>
 <!-- AOC TILES END -->
