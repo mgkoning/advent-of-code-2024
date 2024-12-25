@@ -9,7 +9,7 @@ import gleam/string
 import pretty
 import util
 
-const show_map = True
+const show_map = False
 
 pub fn run(input) {
   let #(map, moves) = read_input(input)

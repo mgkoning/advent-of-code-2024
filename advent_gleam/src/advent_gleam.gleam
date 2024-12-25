@@ -1,12 +1,22 @@
 import argv
 import gleam/int
+import gleam/io
 import gleam/result
+import gleam/yielder
 import runner
 import time
 import util
 
 pub fn main() {
-  run(determine_day())
+  case determine_day() {
+    Day(n) -> run(n)
+    All -> {
+      yielder.range(1, 25)
+      |> yielder.map(run)
+      |> yielder.each(fn(_) { io.println("") })
+      |> Ok()
+    }
+  }
 }
 
 fn run(day: Int) {
@@ -18,11 +28,17 @@ fn run(day: Int) {
 
 fn determine_day() {
   case argv.load().arguments {
-    [] -> time.day_of_month()
+    [] -> Day(time.day_of_month())
+    ["all"] -> All
     [n] -> {
       let assert Ok(day) = int.parse(n)
-      day
+      Day(day)
     }
     _ -> panic as "Too many arguments"
   }
+}
+
+type Mode {
+  Day(n: Int)
+  All
 }

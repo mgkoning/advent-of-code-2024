@@ -8,6 +8,7 @@ From the `advent_gleam` directory, run one of:
 ```sh
 gleam run     # Run the project with the puzzle for the current day (based on system date)
 gleam run <n> # Run the project with the puzzle for day n
+gleam run all # Run all puzzles for days 1 through 25 sequentially
 gleam test    # Run the tests
 ```
 
